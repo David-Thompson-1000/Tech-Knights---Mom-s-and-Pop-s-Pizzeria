@@ -1,90 +1,83 @@
-class Employee {
+class User {
 
     public String name;
-    public String address;
-    public int age;
-    public String timeOnStaff;
-    public String accessLevel;
-    public String notes;
+    public String username;
+    public String password;
+    public int userID;
+    public boolean signedIn;
 
-    public void setName(String name){
 
-        this.name = name;
+    public void setName(String name){this.name = name;}
+
+    public String getName(){return name;}
+
+    public void setUsername(String Username){this.username = username;}
+
+    public String getUsername(){return username;}
+
+    public void setPassword(String password){this.password = password;} //can also be used for updating a password
+
+    public String getPassword(){return password;}
+
+    public void setUserID(int userID){this.userID = userID;}
+
+    public void logout(){signedIn = false;}
+
+    public void add_customer(Customer customer){customer = new Customer();}
+
+    public void create_order(Order order){order = new Order();}
+
+    public void edit_order(Order order){
+        //needs to be filled with order properties edit commands}
+    }
+
+    public void checkout(Order order){
+        //need a point of reference to make this
+    }
+
+}
+
+class Employee extends User{}
+
+class Manager extends User{
+
+    public void update_customer(Customer customer,String cName, String cPhoneNumber, String cAddress, String cPaymentType){
+
+        customer.setName(cName);
+        customer.setPhoneNumber(cPhoneNumber);
+        customer.setAddress(cAddress);
+        customer.setPaymentType(cPaymentType);
 
     }
 
-    public String getName(){
+    public void deleteCustomer(Customer customer){
 
-        return name;
-
-    }
-
-    public void setAddress(String address){
-
-        this.address = address;
+        customer = null;
 
     }
 
-    public String getAddress(){
+    public void add_employee(String eName, int eUserID, String ePassword, String eUserName) {
 
-        return address;
-
-    }
-
-    public void setAge (int age){
-
-        this.age = age;
+        Employee employee = new Employee();
+        employee.setName(eName);
+        employee.setUsername(eUserName);
+        employee.setPassword(ePassword);
+        employee.setUserID(eUserID);
 
     }
 
-    public int getAge(){
+    public void viewSales(){
 
-        return age;
+        //need the sales code to make this work.
 
-    }
-
-    public void setTimeOnStaff(String timeOnStaff){
-
-        this.timeOnStaff = timeOnStaff;
-
-    }
-
-    public String getTimeOnStaff(){
-
-        return timeOnStaff;
-
-    }
-
-    public void setAccessLevel(String accessLevel){
-
-        this.accessLevel = accessLevel;
-
-    }
-
-    public String getAccessLevel(){
-
-        return accessLevel;
-
-    }
-
-    public void setNotes(String notes){
-
-        this.notes = notes;
-
-    }
-
-    public String getNotes(){
-
-        return notes;
-
-    }
+    };
 
 }
 
 class Customer{
 
     public String name;
-    public String phoneNumber;
+    public String phoneNumber; //I didn't put this in as an int due to the dashes, parentheses, and spaces.
     public String address;
     public String paymentType;
 
@@ -131,8 +124,8 @@ class card extends Customer{
 
 }
 
-class cash extends Customer{
+class Order{
 
-    //not really sure what to put here.
+    //filler to be filled with other code.
 
 }
