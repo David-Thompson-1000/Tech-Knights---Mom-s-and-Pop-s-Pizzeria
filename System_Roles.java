@@ -74,6 +74,7 @@ class Manager extends User{
 
 }
 
+/*
 class Customer{
 
     public String name;
@@ -97,7 +98,7 @@ class Customer{
 
     public String getPaymentType(){return paymentType;}
 
-}
+} */
 
 class card extends Customer{
 
