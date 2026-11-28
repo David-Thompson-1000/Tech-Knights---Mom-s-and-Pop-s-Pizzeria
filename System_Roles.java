@@ -124,8 +124,3 @@ class card extends Customer{
 
 }
 
-class Order{
-
-    //filler to be filled with other code.
-
-}
